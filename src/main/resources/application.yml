@@ -1,0 +1,42 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: Your email address here
+    password: App password of your email address here
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/scheduler
+    username: root
+    password: root123
+
+  jpa:
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          #Below peoperty is for converting jpa method to queries.
+          dialect: org.hibernate.dialect.MySQL5Dialect
+
+server:
+  port: 8083
+
+report:
+  send:
+    toemail:
+      list: a@gmail.com,b@gmail.com
+
+#Below cron expression means each one minutes
+cron_interval: 0 */2 * ? * *
+
+
+
+
+
